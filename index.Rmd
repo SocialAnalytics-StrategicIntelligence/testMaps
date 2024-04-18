@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+a map
+
+```{r}
+linkGH="COUNTIESSURVEY_POLYM.shp"
+
+library(sf)
+
+counties=sf::read_sf(linkGH)
+
+```
+```{r}
+library(ggplot2)
+
+ggplot(data=counties) + geom_sf(aes(fill=POP1980))
+
+```
+
